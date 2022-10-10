@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Polis</string>
+    <string name="more_btn">More</string>
+    <string name="activities_btn">Activities</string>
+    <string name="map_btn">Map</string>
+    <string name="login_btn">Login</string>
+    <string name="register_btn">Register</string>
+
+</resources>
