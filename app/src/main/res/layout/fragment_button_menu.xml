@@ -5,7 +5,7 @@
     android:id="@+id/pick"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.ButtonMenuFragment" >
+    tools:context=".ui.fragment.ButtonMenuFragment">
 
     <Button
         android:id="@+id/activities_btn"
@@ -40,7 +40,6 @@
         android:text="placeholder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

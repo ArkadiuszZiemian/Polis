@@ -4,11 +4,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/login_btn"
+    <ImageView
+        android:id="@+id/logo_iv"
+        android:layout_width="800dp"
+        android:layout_height="800dp"
+        android:layout_marginStart="-5dp"
+        android:layout_marginBottom="-210dp"
+        android:contentDescription="@string/logo_iv"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/social_btn_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/app_logo" />
+
+    <LinearLayout
+        android:id="@+id/social_btn_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#3F51B5"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/or_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <!--
+        drawableStart doesn't draw drawables, drawableLeft is used instead
+        -->
+        <Button
+            android:id="@+id/twitter_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/cyan"
+            android:drawableLeft="@drawable/twitter_icon"
+            android:text="@string/twitter_btn" />
+
+        <Button
+            android:id="@+id/facebook_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:drawableLeft="@drawable/facebook_icon"
+            android:text="@string/facebook_btn" />
+
+
+        <Button
+            android:id="@+id/google_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/yellow"
+            android:drawableLeft="@drawable/google_icon"
+            android:text="@string/google_btn" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/or_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@string/or_tv"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/login_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
         android:text="@string/login_btn"
         app:layout_constraintBottom_toTopOf="@+id/register_btn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,11 +80,13 @@
 
     <Button
         android:id="@+id/register_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#4CAF50"
+        android:backgroundTint="@color/red"
         android:text="@string/register_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

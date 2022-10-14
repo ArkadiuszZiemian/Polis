@@ -5,5 +5,10 @@
     <string name="map_btn">Map</string>
     <string name="login_btn">Login</string>
     <string name="register_btn">Register</string>
+    <string name="google_btn">Sign in with Google</string>
+    <string name="facebook_btn">Sign in with Facebook</string>
+    <string name="twitter_btn">Sign in with Twitter</string>
+    <string name="or_tv">OR\n\nUSE A SERVICE ACCOUNT</string>
+    <string name="logo_iv">APPLICATION LOGO</string>
 
 </resources>
