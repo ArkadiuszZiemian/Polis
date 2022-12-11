@@ -8,4 +8,8 @@
         <item name="postSplashScreenTheme">@style/Theme.Polis</item>
     </style>
 
+    <style name="CheckableChip" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_state_color</item>
+    </style>
+
 </resources>

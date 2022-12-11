@@ -14,5 +14,9 @@
     <color name="teal">#007A7A</color>
     <color name="red">#DB0125</color>
     <color name="green">#4CAF50</color>
+    <color name="pink">#f50057</color>
+    <color name="orange">#ff6d00</color>
+    <color name="gold">#ffff00</color>
+
 
 </resources>

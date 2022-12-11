@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.avangarde.polis">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/SplashScreen"
         tools:targetApi="33">
-
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">
@@ -24,7 +22,24 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.ptruiz.authtest.HANDLE_AUTHORIZATION_RESPONSE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="net.openid.appauth.RedirectUriReceiverActivity"
+            android:exported="true"
+            tools:node="replace">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="polis.avangarde.com"
+                    android:path="/oauth2redirect"
+                    android:scheme="https" />
+            </intent-filter>
         </activity>
     </application>
-
 </manifest>

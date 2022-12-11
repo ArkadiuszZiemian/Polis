@@ -6,7 +6,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/city_menu_container"
-        android:name="com.avangarde.polis.ui.fragment.Hilt_CityMenuFragment"
+        android:name="com.avangarde.polis.ui.fragment.CityInfoFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/user_picks_container"

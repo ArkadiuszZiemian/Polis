@@ -83,4 +83,5 @@ lint/intermediates/
 lint/generated/
 lint/outputs/
 lint/tmp/
-# lint/reports/
+# JSON IDP configs
+*_idp.json

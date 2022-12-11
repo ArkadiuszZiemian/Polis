@@ -10,5 +10,24 @@
     <string name="twitter_btn">Sign in with Twitter</string>
     <string name="or_tv">OR\n\nUSE A SERVICE ACCOUNT</string>
     <string name="logo_iv">APPLICATION LOGO</string>
+    <string name="settings_menu">Settings menu</string>
+    <string name="chips_header">Choose what interests you:</string>
+    <string name="chip1">Technology</string>
+    <string name="chip2">Sports&amp;Physical Activities</string>
+    <string name="chip3">Art&amp;Culture</string>
+    <string name="chip4">Books&amp;Movies</string>
+    <string name="chip5">Games</string>
+    <string name="chip6">Pets&amp;Animals</string>
+    <string name="chip7">Social Activities&amp;Partying</string>
+    <string name="chip8">Travel&amp;Outdoor</string>
+    <string name="chip9">Shopping&amp;Beauty</string>
+    <string name="chip10">Motorization</string>
+    <string name="logout_mi">Logout</string>
+    <string name="attribution_mi">Attributions</string>
+    <string name="interests_panel_btn">INTERESTS PANEL</string>
+    <string name="conf_btn">Confirm</string>
+    <string name="attrib_header">To build this app I utilized graphical resources from among others:</string>
+    <string name="attrib1"><a href="https://www.freepik.com/">freepik.com</a></string>
+    <string name="attrib2"><a href="https://icons8.com/">icons8.com</a></string>
 
 </resources>

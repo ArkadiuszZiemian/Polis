@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.CityInfoFragment">
 
+    <ImageButton
+        android:id="@+id/popup_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/settings_menu"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/more_btn"
