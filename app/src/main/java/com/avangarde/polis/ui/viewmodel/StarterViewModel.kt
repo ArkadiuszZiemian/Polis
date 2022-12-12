@@ -11,7 +11,8 @@ import com.auth0.android.jwt.JWT
 import com.avangarde.polis.configuration.Idp
 import com.avangarde.polis.data.local.datastore.AuthStateDataStore
 import com.avangarde.polis.di.component.AppComponent
-import com.avangarde.polis.helper.AuthConfig
+import com.avangarde.polis.di.component.AuthComponent
+import com.avangarde.polis.di.component.DaggerAuthComponent
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
@@ -30,8 +31,8 @@ class StarterViewModel @AssistedInject constructor(
     private val dataStore: AuthStateDataStore,
     @Assisted private val appComponent: AppComponent
 ) : ViewModel() {
+    private lateinit var authComponent: AuthComponent
     lateinit var secret: String
-    private lateinit var authConfig: AuthConfig
     private val _isLoggedIn = MutableStateFlow(false)
     val isLoggedIn: StateFlow<Boolean> = _isLoggedIn
 
@@ -40,10 +41,10 @@ class StarterViewModel @AssistedInject constructor(
         packageManager: PackageManager,
         idpConfig: Idp
     ) {
-        authConfig = AuthConfig(idpConfig, appComponent)
-        authState = AuthState(authConfig.authServiceConf)
+        authComponent = DaggerAuthComponent.factory().create(idpConfig, appComponent)
+        authState = AuthState(authComponent.getAuthServConf())
         val authIntent =
-            authConfig.authService.getAuthorizationRequestIntent(authConfig.authRequest)
+            authComponent.getAuthServ().getAuthorizationRequestIntent(authComponent.getAuthReq())
         authIntent.resolveActivity(packageManager)?.let { authLauncher.launch(authIntent) }
             ?: throw IllegalStateException("No Intent available to handle the code retrieval")
     }
@@ -66,7 +67,7 @@ class StarterViewModel @AssistedInject constructor(
         if (authCode == null)
             throw IllegalStateException("Authorization code wasn't retrieved successfully")
         else {
-            authConfig.authService.performTokenRequest(
+            authComponent.getAuthServ().performTokenRequest(
                 authCode.createTokenExchangeRequest(), ClientSecretBasic(secret)
             ) { tokenResponse, e ->
                 if (e != null) throw e

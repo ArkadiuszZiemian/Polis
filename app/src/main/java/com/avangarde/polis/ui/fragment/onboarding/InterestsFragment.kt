@@ -16,7 +16,7 @@ import com.avangarde.polis.ui.viewmodel.InterestsViewModel
 class InterestsFragment : Fragment() {
     private var _binding: FragmentInterestsBinding? = null
     private val binding get() = _binding!!
-    private val interestsViewModel: InterestsViewModel by viewModels()
+    private val interestsViewModel by viewModels <InterestsViewModel> ()
     override fun onAttach(context: Context) {
         super.onAttach(context)
         handleBackPress()

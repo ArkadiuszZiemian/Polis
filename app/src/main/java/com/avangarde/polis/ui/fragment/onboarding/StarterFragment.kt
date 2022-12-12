@@ -35,7 +35,7 @@ class StarterFragment : Fragment() {
     private val screenComponent by lazy {
         DaggerScreenComponent.factory().create(appComponent, authDataStoreComponent)
     }
-    private val starterViewModel: StarterViewModel by viewModels {
+    private val starterViewModel by viewModels<StarterViewModel> {
         ViewModelFactory {
             screenComponent.getStarterViewModel().create(appComponent)
         }

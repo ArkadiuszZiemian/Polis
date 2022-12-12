@@ -22,7 +22,7 @@ class CityInfoFragment : Fragment() {
     private val screenComponent by lazy {
         DaggerScreenComponent.factory().create(appComponent, authDataStoreComponent)
     }
-    private val cityInfoViewModel: CityInfoViewModel by viewModels {
+    private val cityInfoViewModel by viewModels<CityInfoViewModel> {
         ViewModelFactory {
             screenComponent.getCityInfoViewModel()
         }
