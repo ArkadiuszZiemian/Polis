@@ -24,9 +24,9 @@ class IdpWithPkce(
     val messageDigestAlgorithm: String
 ) : Idp() {
 
-    fun getCodeVerifier(): String {
+    fun getCodeVerifier(byteArraySize: Int = 32): String {
         val secureRandom = SecureRandom()
-        val bytes = ByteArray(32)
+        val bytes = ByteArray(byteArraySize)
         secureRandom.nextBytes(bytes)
         return Base64.getUrlEncoder().withoutPadding().encodeToString(bytes)
     }

@@ -8,6 +8,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.auth0.android.jwt.JWT
+import com.avangarde.polis.common.Constants.EMAIL_PATTERN
 import com.avangarde.polis.configuration.Idp
 import com.avangarde.polis.data.local.datastore.AuthStateDataStore
 import com.avangarde.polis.di.component.AppComponent
@@ -45,8 +46,11 @@ class StarterViewModel @AssistedInject constructor(
         authState = AuthState(authComponent.getAuthServConf())
         val authIntent =
             authComponent.getAuthServ().getAuthorizationRequestIntent(authComponent.getAuthReq())
-        authIntent.resolveActivity(packageManager)?.let { authLauncher.launch(authIntent) }
-            ?: throw IllegalStateException("No Intent available to handle the code retrieval")
+        authLauncher.launch(authIntent)
+        if (authIntent.resolveActivity(packageManager) != null)
+            authLauncher.launch(authIntent)
+        else
+            throw IllegalStateException("No Intent available to handle the code retrieval")
     }
 
     fun launchAuthRequest(result: ActivityResult) {
@@ -88,6 +92,8 @@ class StarterViewModel @AssistedInject constructor(
             idToken?.let {
                 val jwt = JWT(it)
                 email = jwt.getClaim("email").asString()
+                if (!(email!! matches Regex(EMAIL_PATTERN)))
+                    throw IllegalStateException("$email isn't a valid email address")
             } ?: return@runBlocking
         }
         return email

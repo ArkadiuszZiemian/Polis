@@ -76,6 +76,8 @@ ext{
     dagger2 = "2.44.2"
     retrofit = "2.9.0"
     moshi = "1.14.0"
+    truth = "1.1.3"
+    mockk = "1.12.4"
 }
 
 dependencies {
@@ -98,7 +100,7 @@ dependencies {
     implementation "com.google.dagger:dagger:$dagger2"
     kapt "com.google.dagger:dagger-compiler:$dagger2"
     //ApiData
-    implementation "com.google.android.libraries.places:places:2.7.0"
+    implementation "com.google.android.libraries.places:places:3.0.0"
     //LocalData
     implementation "androidx.datastore:datastore-preferences:1.1.0-dev01"
     //Network
@@ -111,11 +113,16 @@ dependencies {
     implementation "com.auth0.android:jwtdecode:2.0.1"
     //Testing
     testImplementation "junit:junit:4.13.2"
-    testImplementation "org.mockito:mockito-core:4.9.0"
-    testImplementation "com.google.truth:truth:1.1.3"
+    testImplementation "io.mockk:mockk:$mockk"
+    testImplementation "com.google.truth:truth:$truth"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinx_coroutines"
+    androidTestImplementation "com.google.truth:truth:$truth"
+    androidTestImplementation "io.mockk:mockk:$mockk"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinx_coroutines"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.5.0"
     androidTestImplementation "androidx.test.ext:junit:1.1.4"
     androidTestImplementation "androidx.navigation:navigation-testing:$nav"
+
     //Util
     implementation "com.jakewharton.timber:timber:5.0.1"
     implementation "com.facebook.fresco:fresco:2.6.0"
