@@ -7,9 +7,9 @@ plugins {
     id "org.jlleitschuh.gradle.ktlint"
 }
 
-def keystorePropertiesFile = rootProject.file("keystore.properties")
+/*def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))*/
 
 def redirectPropertiesFile = rootProject.file("local.properties")
 def redirectProperties = new Properties()
@@ -28,14 +28,14 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
+/*    signingConfigs {
         release {
             keyAlias keystoreProperties["keyAlias"]
             keyPassword keystoreProperties["keyPassword"]
             storeFile file(keystoreProperties["storeFile"])
             storePassword keystoreProperties["storePassword"]
         }
-    }
+    }*/
 
     buildFeatures {
         viewBinding true
@@ -45,7 +45,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-            signingConfig signingConfigs.release
+           // signingConfig signingConfigs.release
         }
     }
 
@@ -122,7 +122,6 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:3.5.0"
     androidTestImplementation "androidx.test.ext:junit:1.1.4"
     androidTestImplementation "androidx.navigation:navigation-testing:$nav"
-
     //Util
     implementation "com.jakewharton.timber:timber:5.0.1"
     implementation "com.facebook.fresco:fresco:2.6.0"
