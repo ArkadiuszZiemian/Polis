@@ -28,8 +28,7 @@ class InterestsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentInterestsBinding.inflate(inflater, container, false)
-        val btn = binding.confBtn
-        btn.setOnClickListener {
+        binding.confBtn.setOnClickListener {
             findNavController().navigate(
                 R.id.action_interestsFragment_to_homeFragment
             )

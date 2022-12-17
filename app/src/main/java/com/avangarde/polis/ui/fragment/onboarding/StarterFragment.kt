@@ -68,6 +68,12 @@ class StarterFragment : Fragment() {
         binding.googleBtn.setOnClickListener {
             idpLoginButtonListener(getIdpConfig(R.raw.google_idp, IdpWithPkce::class.java))
         }
+        binding.loginBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_starterFragment_to_loginFragment)
+        }
+        binding.registerBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_starterFragment_to_registrationFragment)
+        }
         lifecycleScope.launch {
             starterViewModel.isLoggedIn.collect {
                 if (it)

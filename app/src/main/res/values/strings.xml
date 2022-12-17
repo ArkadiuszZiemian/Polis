@@ -26,6 +26,9 @@
     <string name="attribution_mi">Attributions</string>
     <string name="interests_panel_btn">INTERESTS PANEL</string>
     <string name="conf_btn">Confirm</string>
+    <string name="reg_btn">Let\'s go</string>
+    <string name="pass_container">Password</string>
+    <string name="email_container">Email</string>
     <string name="attrib_header">To build this app I utilized graphical resources from among others:</string>
     <string name="attrib1"><a href="https://www.freepik.com/">freepik.com</a></string>
     <string name="attrib2"><a href="https://icons8.com/">icons8.com</a></string>
